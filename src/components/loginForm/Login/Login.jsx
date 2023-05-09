@@ -5,7 +5,6 @@ import MyButton from "../MyButton/MyButton";
 import MyInput from "../MyInput/MyInput";
 import InputLabel from "../InputLabel/InputLabel";
 
-
 function Login(props) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
