@@ -19,7 +19,7 @@ function Login() {
 
     function emailHandler (e) {
         const emailValue = e.target.value
-        const filter = /^\s*[\w\-+_]+(\.[\w\-+_]+)*@[\w\-+_]+\.[\w\-+_]+(\.[\w\-+_]+)*\s*$/;
+        const filter = /^\s*[\w\-+_]+(\.[\w\-+_]+)*@[\w\-+_]+\.[\w\-+_]+(\.[\w\-+_]+)*\s*$/
         setEmail(emailValue)
 
         if (!emailValue) {
@@ -28,14 +28,14 @@ function Login() {
         }
         if (!filter.test(String(emailValue).toLowerCase())) {
             setEmailError('Email field is not correct')
-            return;
+            return
         }
-        setEmailError('');
+        setEmailError('')
     }
 
     function passwordHandler (e) {
         const passwordValue = e.target.value
-        const filter = /^[a-zA-Z0-9!@#$%^&*\-]+$/;
+        const filter = /^[a-zA-Z0-9!@#$%^&*\-]+$/
         setPassword(passwordValue)
 
         if (!passwordValue) {
@@ -71,14 +71,24 @@ function Login() {
                     Login form
                 </h1>
                 <div className={classes.form__input}>
-                    <MyInput onChangeHandler={emailHandler} typeInput='text' nameInput='email'/>
+                    <MyInput
+                        valueInput={email}
+                        onChangeHandler={emailHandler}
+                        typeInput='text'
+                        nameInput='email'
+                    />
                     <InputLabel htmlForName='email' labelText='Email'/>
                     <div className={classes.input__error}>
                         {emailError && <Errormessage errorMessage={emailError}/>}
                     </div>
                 </div>
                 <div className={classes.form__input}>
-                    <MyInput onChangeHandler={passwordHandler} typeInput='password' nameInput='password'/>
+                    <MyInput
+                        valueInput={password}
+                        onChangeHandler={passwordHandler}
+                        typeInput='password'
+                        nameInput='password'
+                    />
                     <InputLabel htmlForName='password' labelText='Password'/>
                     <div className={classes.input__error}>
                         {passwordError && <Errormessage errorMessage={passwordError}/>}
