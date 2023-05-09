@@ -5,7 +5,7 @@ import MyButton from "../MyButton/MyButton";
 import MyInput from "../MyInput/MyInput";
 import InputLabel from "../InputLabel/InputLabel";
 
-function Login(props) {
+function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [emailError, setEmailError] = useState('')
